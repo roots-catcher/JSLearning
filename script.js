@@ -14,8 +14,6 @@ console.log("Hello, i see you!");
 // console.log(`https://someurl.com/${category}/5`);
 
 let numberOfFilms = prompt("How much films you see?", "");
-let lastFilm = prompt("What last film you see?","");
-let rating = prompt("How much?", "");
 
 let personalMovieDB = {
     count : numberOfFilms,
@@ -25,6 +23,15 @@ let personalMovieDB = {
     privat : false
 
 };
-personalMovieDB.movies.lastFilm = rating;
 
-console.log(personalMovieDB.movies);
+let lastFilm = prompt("What last film you see?",""),
+    rating = prompt("How much?", "");
+
+personalMovieDB.movies[lastFilm] = rating;
+
+lastFilm = prompt("What last film you see?","");
+rating = prompt("How much?", "");
+
+personalMovieDB.movies[lastFilm] = rating;
+
+console.log(personalMovieDB);
